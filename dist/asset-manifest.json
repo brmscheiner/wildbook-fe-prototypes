@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.js": "/wildbook-fe-prototypes/static/js/main.0ab73f9e.chunk.js",
-    "main.js.map": "/wildbook-fe-prototypes/static/js/main.0ab73f9e.chunk.js.map",
+    "main.js": "/wildbook-fe-prototypes/static/js/main.2485dc56.chunk.js",
+    "main.js.map": "/wildbook-fe-prototypes/static/js/main.2485dc56.chunk.js.map",
     "runtime-main.js": "/wildbook-fe-prototypes/static/js/runtime-main.7aa50da3.js",
     "runtime-main.js.map": "/wildbook-fe-prototypes/static/js/runtime-main.7aa50da3.js.map",
-    "static/js/2.74964094.chunk.js": "/wildbook-fe-prototypes/static/js/2.74964094.chunk.js",
-    "static/js/2.74964094.chunk.js.map": "/wildbook-fe-prototypes/static/js/2.74964094.chunk.js.map",
+    "static/js/2.37e0f832.chunk.js": "/wildbook-fe-prototypes/static/js/2.37e0f832.chunk.js",
+    "static/js/2.37e0f832.chunk.js.map": "/wildbook-fe-prototypes/static/js/2.37e0f832.chunk.js.map",
     "index.html": "/wildbook-fe-prototypes/index.html",
-    "precache-manifest.d4dd5216488cde1de167c2326dc14dc4.js": "/wildbook-fe-prototypes/precache-manifest.d4dd5216488cde1de167c2326dc14dc4.js",
+    "precache-manifest.67916b57d555a232c1b30d7455dd3acc.js": "/wildbook-fe-prototypes/precache-manifest.67916b57d555a232c1b30d7455dd3acc.js",
     "service-worker.js": "/wildbook-fe-prototypes/service-worker.js",
-    "static/js/2.74964094.chunk.js.LICENSE.txt": "/wildbook-fe-prototypes/static/js/2.74964094.chunk.js.LICENSE.txt",
-    "static/media/blog-post.1.md": "/wildbook-fe-prototypes/static/media/blog-post.1.f3a53693.md",
-    "static/media/blog-post.2.md": "/wildbook-fe-prototypes/static/media/blog-post.2.99cbba3b.md",
-    "static/media/blog-post.3.md": "/wildbook-fe-prototypes/static/media/blog-post.3.8d6e276b.md"
+    "static/js/2.37e0f832.chunk.js.LICENSE.txt": "/wildbook-fe-prototypes/static/js/2.37e0f832.chunk.js.LICENSE.txt",
+    "static/media/jon.jpeg": "/wildbook-fe-prototypes/static/media/jon.ffdb1096.jpeg",
+    "static/media/jon2.jpeg": "/wildbook-fe-prototypes/static/media/jon2.b658bdc6.jpeg",
+    "static/media/shark1.png": "/wildbook-fe-prototypes/static/media/shark1.e370ca58.png",
+    "static/media/shark2.jpeg": "/wildbook-fe-prototypes/static/media/shark2.fc277223.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.7aa50da3.js",
-    "static/js/2.74964094.chunk.js",
-    "static/js/main.0ab73f9e.chunk.js"
+    "static/js/2.37e0f832.chunk.js",
+    "static/js/main.2485dc56.chunk.js"
   ]
 }
