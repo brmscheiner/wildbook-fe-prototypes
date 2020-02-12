@@ -2,10 +2,13 @@
   "name": "create-react-app",
   "version": "4.0.0",
   "private": true,
+  "homepage": "http://brmscheiner.github.io/wildbook-fe-prototypes",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",  
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@babel/core": "7.8.4",
@@ -135,5 +138,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
