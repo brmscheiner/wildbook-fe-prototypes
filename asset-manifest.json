@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/wildbook-fe-prototypes/static/js/main.0ab73f9e.chunk.js",
+    "main.js.map": "/wildbook-fe-prototypes/static/js/main.0ab73f9e.chunk.js.map",
+    "runtime-main.js": "/wildbook-fe-prototypes/static/js/runtime-main.7aa50da3.js",
+    "runtime-main.js.map": "/wildbook-fe-prototypes/static/js/runtime-main.7aa50da3.js.map",
+    "static/js/2.74964094.chunk.js": "/wildbook-fe-prototypes/static/js/2.74964094.chunk.js",
+    "static/js/2.74964094.chunk.js.map": "/wildbook-fe-prototypes/static/js/2.74964094.chunk.js.map",
+    "index.html": "/wildbook-fe-prototypes/index.html",
+    "precache-manifest.d4dd5216488cde1de167c2326dc14dc4.js": "/wildbook-fe-prototypes/precache-manifest.d4dd5216488cde1de167c2326dc14dc4.js",
+    "service-worker.js": "/wildbook-fe-prototypes/service-worker.js",
+    "static/js/2.74964094.chunk.js.LICENSE.txt": "/wildbook-fe-prototypes/static/js/2.74964094.chunk.js.LICENSE.txt",
+    "static/media/blog-post.1.md": "/wildbook-fe-prototypes/static/media/blog-post.1.f3a53693.md",
+    "static/media/blog-post.2.md": "/wildbook-fe-prototypes/static/media/blog-post.2.99cbba3b.md",
+    "static/media/blog-post.3.md": "/wildbook-fe-prototypes/static/media/blog-post.3.8d6e276b.md"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7aa50da3.js",
+    "static/js/2.74964094.chunk.js",
+    "static/js/main.0ab73f9e.chunk.js"
+  ]
+}
