@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wildbook-fe-prototypes/precache-manifest.d4dd5216488cde1de167c2326dc14dc4.js"
+  "/wildbook-fe-prototypes/precache-manifest.67916b57d555a232c1b30d7455dd3acc.js"
 );
 
 self.addEventListener('message', (event) => {
