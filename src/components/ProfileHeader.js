@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
@@ -11,7 +10,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import HomeIcon from "@material-ui/icons/Home";
 import WebIcon from "@material-ui/icons/Web";
 import SchoolIcon from "@material-ui/icons/School";
-import CardMedia from "@material-ui/core/CardMedia";
+import GroupIcon from "@material-ui/icons/Group";
 import Avatar from "@material-ui/core/Avatar";
 import jon from "../assets/jon2.jpeg";
 
@@ -20,7 +19,6 @@ const drawerWidth = 20;
 const useStyles = makeStyles(theme => {
   return {
     root: {
-      marginTop: theme.spacing(8),
       padding: theme.spacing(5),
       display: "flex"
     },
@@ -66,6 +64,11 @@ export default function ProfileHeader() {
             <WebIcon className={classes.infoIcon} />
             <Typography variant="subtitle1" className={classes.infoPreface}>Website:</Typography>
             <Link variant="subtitle1">https://id.sito.org/uwi/</Link>
+          </Grid>
+          <Grid container>
+            <GroupIcon className={classes.infoIcon} />
+            <Typography variant="subtitle1" className={classes.infoPreface}>Member of</Typography>
+            <Link variant="subtitle1">Max Planck Institute of Ornithology</Link>
           </Grid>
           <Button variant="outlined" size="small" className={classes.editButton}>
               <EditIcon fontSize="small" className={classes.infoIcon} />
