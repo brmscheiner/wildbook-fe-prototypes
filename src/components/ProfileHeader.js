@@ -19,8 +19,10 @@ const drawerWidth = 20;
 const useStyles = makeStyles(theme => {
   return {
     root: {
-      padding: theme.spacing(5),
-      display: "flex"
+      padding: theme.spacing(3),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
     },
     avatar: {
       width: theme.spacing(26),

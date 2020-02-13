@@ -1,4 +1,5 @@
 import React from "react";
+import Grid from "@material-ui/core/Grid";
 import EncounterGrid from "./EncounterGrid";
 import ProfileHeader from "./ProfileHeader";
 import RecentActivity from "./RecentActivity";
@@ -8,8 +9,14 @@ export default function Dashboard() {
   return (
     <div>
       <MatchProgressBanner />
-      <ProfileHeader />
-      <RecentActivity />
+      <Grid container direction="row">
+        <Grid item>
+          <ProfileHeader />
+        </Grid>
+        <Grid item>
+          <RecentActivity />
+        </Grid>
+      </Grid>
       <EncounterGrid />
     </div>
   );

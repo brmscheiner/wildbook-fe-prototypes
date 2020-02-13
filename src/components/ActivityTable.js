@@ -16,7 +16,7 @@ import CheckIcon from "@material-ui/icons/Check";
 
 const useStyles = makeStyles(theme => ({
   table: {
-    minWidth: 650
+    minWidth: 300
   },
   cell: {
     borderBottom: "unset"
@@ -34,8 +34,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: deepPurple[500]
   },
   red: {
-      color: theme.palette.getContrastText(red[500]),
-      backgroundColor: red[500],
+    color: theme.palette.getContrastText(red[500]),
+    backgroundColor: red[500]
   }
 }));
 
@@ -44,40 +44,66 @@ function createData(avatar, request, color) {
 }
 
 const rows = [
-  createData("T", "Tom Scholtz sent you a collaboration request", 'orange'),
+  createData("T", "Tom Scholtz sent you a collaboration request", "orange"),
   createData(
     "J",
-    "Jane Dillum asked to join the Max Planck Institute of Ornithology", 'green'
+    "Jane Dillum asked to join the Max Planck Institute of Ornithology",
+    "green"
   ),
-  createData("P", "Phillip Eclair sent you a collaboration request", 'purple')
+  createData("P", "Phillip Eclair sent you a collaboration request", "purple")
 ];
 
 export default function ActivityTable() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer>
       <Table className={classes.table} aria-label="simple table">
         <TableBody>
           {rows.map(row => {
-              return (
-                <TableRow key={row.request}>
-                  <TableCell className={classes.cell} component="th" scope="row">
-                    <Grid container>
-                      <Grid item>
-                        <Avatar className={classes[row.color]}>{row.avatar}</Avatar>
-                      </Grid>
-                      <Grid item>
-                        <Typography>{row.request}</Typography>
-                      </Grid>
+            return (
+              <TableRow key={row.request}>
+                <TableCell className={classes.cell} component="th" scope="row">
+                  <Grid
+                    container
+                    alignItems="center"
+                    spacing={2}
+                    style={{ flexWrap: "nowrap" }}
+                  >
+                    <Grid item>
+                      <Avatar className={classes[row.color]}>
+                        {row.avatar}
+                      </Avatar>
                     </Grid>
-                  </TableCell>
-                  <TableCell className={classes.cell} align="right">
-                    <Button className={classes.green} variant="outlined" size="small" ><CheckIcon /></Button>
-                    <Button className={classes.red} variant="outlined" size="small" ><CloseIcon /></Button>
-                  </TableCell>
-                </TableRow>
-              )
+                    <Grid item>
+                      <Typography>{row.request}</Typography>
+                    </Grid>
+                  </Grid>
+                </TableCell>
+                <TableCell className={classes.cell} align="right">
+                  <Grid container spacing={1} style={{ flexWrap: "nowrap" }}>
+                    <Grid item>
+                      <Button
+                        className={classes.green}
+                        variant="outlined"
+                        size="small"
+                      >
+                        <CheckIcon />
+                      </Button>
+                    </Grid>
+                    <Grid item>
+                      <Button
+                        className={classes.red}
+                        variant="outlined"
+                        size="small"
+                      >
+                        <CloseIcon />
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </TableCell>
+              </TableRow>
+            );
           })}
         </TableBody>
       </Table>

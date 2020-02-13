@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles, lighten } from "@material-ui/core/styles";
+import { deepPurple, green, blue } from "@material-ui/core/colors";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -15,11 +16,25 @@ import shark1 from "../assets/shark1.png";
 import shark2 from "../assets/shark2.jpeg";
 
 const drawerWidth = 20;
+const cardWidth = 350;
+
+const ColorLinearProgress = withStyles({
+  root: {
+    height: 12
+  },
+  colorPrimary: {
+    backgroundColor: blue[100]
+  },
+  barColorPrimary: {
+    backgroundColor: blue[500]
+  }
+})(LinearProgress);
 
 const useStyles = makeStyles(theme => {
   return {
     root: {
-      maxWidth: 345
+      width: cardWidth,
+      display: "inline"
     },
     media: {
       height: 200,
@@ -43,6 +58,30 @@ const encounters = [
     date: "06/31/2019",
     photoCount: 14,
     matchCount: 5
+  },
+  {
+    img: shark2,
+    date: "11/14/2019",
+    photoCount: 9,
+    matchCount: 2
+  },
+  {
+    img: shark1,
+    date: "06/31/2019",
+    photoCount: 14,
+    matchCount: 5
+  },
+  {
+    img: shark2,
+    date: "11/14/2019",
+    photoCount: 9,
+    matchCount: 2
+  },
+  {
+    img: shark1,
+    date: "06/31/2019",
+    photoCount: 14,
+    matchCount: 5
   }
 ];
 
@@ -51,17 +90,17 @@ export default function EncounterGrid() {
 
   return (
     <Box padding={2}>
-      <Typography component="h4" variant="h4">
+      <Typography component="h4" variant="h4" style={{ margin: 12 }}>
         Your Encounters
       </Typography>
-      <Box component="span">
+      {/* <Box component="span">
         <Typography component="span">
           Your encounters are only visible to others in your organization.
         </Typography>
         <Link className={classes.permissionsButton}>
           <Typography component="span">Edit Permissions</Typography>
         </Link>
-      </Box>
+      </Box> */}
       <Grid container spacing={3}>
         <Grid item>
           <Card className={classes.root}>
@@ -70,7 +109,30 @@ export default function EncounterGrid() {
                 className={classes.media}
                 image={shark1}
                 title="Contemplative Reptile"
+                style={{
+                  filter: "brightness(0.5) grayscale(1)"
+                }}
               />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 140,
+                  left: 50,
+                  color: "white",
+                  width: 200
+                }}
+              >
+                <ColorLinearProgress variant="determinate" value={52} />
+                <Typography
+                  style={{
+                    textAlign: "center",
+                    marginTop: 10,
+                    fontWeight: "bold"
+                  }}
+                >
+                  Matches 52% Complete
+                </Typography>
+              </div>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   2/13/2020
@@ -78,7 +140,6 @@ export default function EncounterGrid() {
                 <Typography variant="body2" color="textSecondary" component="p">
                   26 photographs
                 </Typography>
-                <LinearProgress variant="determinate" value={52} />
               </CardContent>
             </CardActionArea>
             {/* <CardActions>

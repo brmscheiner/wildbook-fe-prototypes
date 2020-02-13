@@ -41,6 +41,9 @@ export default function App() {
       },
       secondary: {
         main: "#000000"
+      },
+      paper: {
+        main: "#eeeeee"
       }
     }
   });
