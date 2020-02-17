@@ -5,6 +5,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import Divider from "@material-ui/core/Divider";
+import Paper from "@material-ui/core/Paper";
 import ListItemText from "@material-ui/core/ListItemText";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -17,11 +18,11 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexWrap: "unset",
     flexDirection: "row",
-    minHeight: 500
+    minHeight: 500,
   },
   list: {
     width: "100%",
-    maxWidth: 160,
+    maxWidth: 180,
     backgroundColor: "theme.palette.background.paper"
   }
 }));
@@ -30,7 +31,7 @@ export default function RecentActivity() {
   const classes = useStyles();
 
   return (
-    <div>
+    <Paper elevation={5}>
       <Grid container className={classes.root}>
         <Grid item className={classes.list}>
           <List
@@ -54,8 +55,11 @@ export default function RecentActivity() {
               <ListItemText primary="Approvals (1)" />
             </ListItem>
             <Divider />
-            <ListItem style={{ backgroundColor: '#dddddd'}}>
+            <ListItem style={{ backgroundColor: "#dddddd" }}>
               <ListItemText primary="Requests (3)" />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Merges & Splits (2)" />
             </ListItem>
           </List>
         </Grid>
@@ -66,6 +70,6 @@ export default function RecentActivity() {
           <ActivityTable />
         </Grid>
       </Grid>
-    </div>
+    </Paper>
   );
 }

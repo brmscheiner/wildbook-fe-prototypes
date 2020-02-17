@@ -5,6 +5,7 @@ import { deepPurple, green, blue } from "@material-ui/core/colors";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
+import Button from "@material-ui/core/Button";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import LinearProgress from "@material-ui/core/LinearProgress";
@@ -90,9 +91,12 @@ export default function EncounterGrid() {
 
   return (
     <Box padding={2}>
-      <Typography component="h4" variant="h4" style={{ margin: 12 }}>
-        Your Encounters
-      </Typography>
+      <Box>
+        <Typography component="h4" variant="h4" style={{ margin: 12 }}>
+          Your Encounters
+        </Typography>
+        <Button>Report Encounter</Button>
+      </Box>
       {/* <Box component="span">
         <Typography component="span">
           Your encounters are only visible to others in your organization.

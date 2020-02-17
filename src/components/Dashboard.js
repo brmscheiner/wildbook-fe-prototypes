@@ -13,7 +13,7 @@ export default function Dashboard() {
         <Grid item>
           <ProfileHeader />
         </Grid>
-        <Grid item>
+        <Grid item style={{ padding: 40 }}>
           <RecentActivity />
         </Grid>
       </Grid>

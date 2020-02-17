@@ -33,7 +33,7 @@ export default function MatchProgressBanner() {
     >
       <Grid container alignItems="center" justify="space-between">
         <Grid item>
-          <Typography>Calculating matches </Typography>
+          <Typography>Calculating matches for encounter 3XBC72 </Typography>
         </Grid>
         <Grid item className={classes.progress}>
           <LinearProgress
