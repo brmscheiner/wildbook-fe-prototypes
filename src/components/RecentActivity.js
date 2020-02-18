@@ -15,10 +15,14 @@ import ActivityTable from "./ActivityTable";
 const drawerWidth = 20;
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  container: {
+    margin: theme.spacing(4),
+    maxWidth: 1000
+  },
+  grid: {
     flexWrap: "unset",
     flexDirection: "row",
-    minHeight: 500,
+    minHeight: 500
   },
   list: {
     width: "100%",
@@ -31,8 +35,8 @@ export default function RecentActivity() {
   const classes = useStyles();
 
   return (
-    <Paper elevation={5}>
-      <Grid container className={classes.root}>
+    <Paper elevation={5} className={classes.container}>
+      <Grid container className={classes.grid}>
         <Grid item className={classes.list}>
           <List
             component="nav"

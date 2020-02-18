@@ -47,7 +47,7 @@ export default function AppHeader() {
   const classes = useStyles();
 
   return (
-    <AppBar position="absolute" className={clsx(classes.appBar)}>
+    <AppBar position="fixed" className={clsx(classes.appBar)}>
       <Toolbar className={classes.toolbar}>
         <Typography
           component="h1"

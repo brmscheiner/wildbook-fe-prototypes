@@ -7,17 +7,18 @@ import MatchProgressBanner from "./MatchProgressBanner";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div style={{ marginTop: 64 }}>
       <MatchProgressBanner />
-      <Grid container direction="row">
+      <Grid container direction="row" wrap="nowrap">
         <Grid item>
           <ProfileHeader />
         </Grid>
-        <Grid item style={{ padding: 40 }}>
+        <Grid item>
           <RecentActivity />
+
+          <EncounterGrid />
         </Grid>
       </Grid>
-      <EncounterGrid />
     </div>
   );
 }

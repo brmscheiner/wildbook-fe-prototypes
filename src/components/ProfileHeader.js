@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => {
       paddingTop: theme.spacing(3),
       paddingRight: theme.spacing(3),
       paddingLeft: theme.spacing(3),
+      margin: theme.spacing(4),
       display: "flex",
       flexDirection: "column",
       alignItems: "center"
@@ -77,11 +78,11 @@ export default function ProfileHeader() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} raised>
       <Avatar className={classes.avatar} src={jon} title="Jon Van Oast" />
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h2" variant="h2">
+          <Typography component="h4" variant="h4">
             Jon Van Oast
           </Typography>
           <Grid container className={classes.lineItem}>

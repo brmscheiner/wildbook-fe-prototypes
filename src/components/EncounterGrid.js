@@ -13,6 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Link from "@material-ui/core/Link";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 import shark1 from "../assets/shark1.png";
 import shark2 from "../assets/shark2.jpeg";
 
@@ -90,13 +91,16 @@ export default function EncounterGrid() {
   const classes = useStyles();
 
   return (
-    <Box padding={2}>
-      <Box>
+    <Box padding={2} style={{ width: 1000 }}>
+      <Grid container>
         <Typography component="h4" variant="h4" style={{ margin: 12 }}>
           Your Encounters
         </Typography>
-        <Button>Report Encounter</Button>
-      </Box>
+        <Button small>
+          <AddCircleIcon />
+          <Typography style={{ marginLeft: 8 }}>Report Encounter</Typography>
+        </Button>
+      </Grid>
       {/* <Box component="span">
         <Typography component="span">
           Your encounters are only visible to others in your organization.
