@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "66c07ce679a435afafd425f2476bf702",
+    "revision": "8f6c4ce1a88c97cb708dfba890e20e60",
     "url": "/wildbook-fe-prototypes/index.html"
   },
   {
-    "revision": "f440f658a8ae5c52da76",
-    "url": "/wildbook-fe-prototypes/static/js/2.30bbd707.chunk.js"
+    "revision": "e8e79b824b080ef95a5e",
+    "url": "/wildbook-fe-prototypes/static/js/2.3d940567.chunk.js"
   },
   {
     "revision": "3adc01bea76e7956dc3633ee898f6936",
-    "url": "/wildbook-fe-prototypes/static/js/2.30bbd707.chunk.js.LICENSE.txt"
+    "url": "/wildbook-fe-prototypes/static/js/2.3d940567.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ae5e3702e34c1184ada4",
-    "url": "/wildbook-fe-prototypes/static/js/main.d0a64433.chunk.js"
+    "revision": "d2e0ddeb4b0a01b38913",
+    "url": "/wildbook-fe-prototypes/static/js/main.b5e0162c.chunk.js"
   },
   {
     "revision": "86d7c2b67b510718f51a",

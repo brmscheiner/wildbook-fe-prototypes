@@ -90,7 +90,7 @@ export default function ProfileHeader() {
             <Typography variant="subtitle2" className={classes.infoPreface}>
               Affiliated with
             </Typography>
-            <Link variant="subtitle2">University of Obregón</Link>
+            <Link variant="subtitle2">University of Obregóno</Link>
           </Grid>
           <Grid container className={classes.lineItem}>
             <HomeIcon className={classes.infoIcon} />

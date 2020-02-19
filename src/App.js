@@ -10,6 +10,7 @@ import Link from "@material-ui/core/Link";
 import AppHeader from "./components/AppHeader";
 import Dashboard from "./components/Dashboard";
 import NewEncounter from "./pages/NewEncounter";
+import MatchResolution from "./pages/MatchResolution";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -60,6 +61,12 @@ export default function App() {
         <Switch>
           <Route path="/encounters/new">
             <NewEncounter />
+          </Route>
+          <Route path="/encounters/4232318">
+            <MatchResolution />
+          </Route>
+          <Route path="/match-resolution">
+            <MatchResolution />
           </Route>
           <Route>
             <Dashboard />
