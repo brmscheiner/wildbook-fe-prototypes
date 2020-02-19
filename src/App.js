@@ -36,6 +36,10 @@ function Copyright() {
   );
 }
 
+function buildMatch(path) {
+  return process.env.PUBLIC_URL + path;
+}
+
 export default function App() {
   const theme = createMuiTheme({
     palette: {
@@ -59,13 +63,13 @@ export default function App() {
       <Router>
         <AppHeader />
         <Switch>
-          <Route path="/encounters/new">
+          <Route path={buildMatch("/encounters/new")}>
             <NewEncounter />
           </Route>
-          <Route path="/encounters/4232318">
+          <Route path={buildMatch("/encounters/4232318")}>
             <MatchResolution />
           </Route>
-          <Route path="/match-resolution">
+          <Route path={buildMatch("/match-resolution")}>
             <MatchResolution />
           </Route>
           <Route>

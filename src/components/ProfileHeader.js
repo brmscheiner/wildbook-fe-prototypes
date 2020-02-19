@@ -97,7 +97,7 @@ export default function ProfileHeader() {
             <Typography variant="subtitle2" className={classes.infoPreface}>
               Lives in
             </Typography>
-            <Link variant="subtitle2">Portland, Oregon</Link>
+            <Link variant="subtitle2">Portland, Oregón</Link>
           </Grid>
           <Grid container className={classes.lineItem}>
             <WebIcon className={classes.infoIcon} />
