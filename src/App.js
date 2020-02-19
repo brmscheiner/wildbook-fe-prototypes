@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {
   createMuiTheme,
   makeStyles,
@@ -8,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import AppHeader from "./components/AppHeader";
 import Dashboard from "./components/Dashboard";
+import NewEncounter from "./pages/NewEncounter";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -53,8 +55,17 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppHeader />
-      <Dashboard />
+      <Router>
+        <AppHeader />
+        <Switch>
+          <Route path="/encounters/new">
+            <NewEncounter />
+          </Route>
+          <Route>
+            <Dashboard />
+          </Route>
+        </Switch>
+      </Router>
     </ThemeProvider>
   );
 }
