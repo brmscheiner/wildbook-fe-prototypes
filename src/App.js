@@ -11,6 +11,7 @@ import AppHeader from "./components/AppHeader";
 import Dashboard from "./components/Dashboard";
 import NewEncounter from "./pages/NewEncounter";
 import MatchResolution from "./pages/MatchResolution";
+import DiscoveryReview from "./pages/DiscoveryReview";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -67,6 +68,9 @@ export default function App() {
           </Route>
           <Route path="/match-resolution">
             <MatchResolution />
+          </Route>
+          <Route path="/discovery-review">
+            <DiscoveryReview />
           </Route>
           <Route>
             <Dashboard />

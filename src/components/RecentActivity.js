@@ -56,7 +56,7 @@ export default function RecentActivity() {
             </ListItem>
             <Divider />
             <ListItem>
-              <ListItemText primary="Approvals (1)" />
+              <ListItemText primary="Reviews (1)" />
             </ListItem>
             <Divider />
             <ListItem style={{ backgroundColor: "#dddddd" }}>
