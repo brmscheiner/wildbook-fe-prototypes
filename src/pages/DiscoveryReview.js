@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import AnnotationEditor from "../components/AnnotationEditor";
+import AnnotationCard from "../components/AnnotationCard";
 import Column from "../components/Column";
 import turt1 from "../assets/turt1.jpg";
 import turt2 from "../assets/turt2.jpg";
@@ -59,7 +59,7 @@ export default function DiscoveryReview() {
           </Typography>
         </div>
         {images.map(img => (
-          <AnnotationEditor
+          <AnnotationCard
             key={img.name}
             name={img.name}
             imageSource={img.imageSource}
