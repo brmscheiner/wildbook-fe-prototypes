@@ -14,7 +14,11 @@ import {
   InputLabel,
   Grid,
   Divider,
-  Button
+  Button,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormLabel
 } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import PermMediaIcon from "@material-ui/icons/PermMediaOutlined";
@@ -27,7 +31,7 @@ export default function NewEncounter() {
     <div
       style={{
         marginTop: 64,
-        marginBottom: 400,
+        marginBottom: 200,
         display: "flex",
         flexDirection: "column",
         alignItems: "center"
@@ -58,7 +62,8 @@ export default function NewEncounter() {
             >
               Upload Media
             </Button>
-            Note: only JPG, JPEG and PNG files will be parsed by the matching engine.
+            Note: only JPG, JPEG and PNG files will be parsed by the matching
+            engine.
           </Grid>
         </Grid>
         <Grid item>
@@ -190,7 +195,7 @@ export default function NewEncounter() {
           <Typography variant="h5">Team</Typography>
 
           <FormControl>
-            <InputLabel>Organization</InputLabel>
+            <InputLabel>Group</InputLabel>
             <Select
               style={{ width: inputWidth }}
               labelId="region-selector-label"
@@ -227,6 +232,31 @@ export default function NewEncounter() {
             label="Photographer email address"
             style={{ width: inputWidth }}
           />
+        </Grid>
+        <Grid item>
+          <Typography variant="h5" style={{ marginBottom: 20 }}>Permissions</Typography>
+          <FormControl component="fieldset">
+            <RadioGroup aria-label="sharing" name="sharing" value={1}>
+              <FormControlLabel value={1} control={<Radio />} label="Public" />
+              <Typography variant="caption">
+                Make the full details of this encounter public. The best way to
+                grow our community.
+              </Typography>
+              <FormControlLabel value={2} control={<Radio />} label="Limited" />
+              <Typography variant="caption">
+                Make the basic details of this encounter public. Approximate
+                location will be shown instead of exact location. Only you,
+                members of your group, and administrators will be able to see
+                the full details of this encounter.
+              </Typography>
+              <FormControlLabel value={3} control={<Radio />} label="Private" />
+              <Typography variant="caption">
+                Make the details of this encounter private. Only you, members of
+                your group, and administrators of this site will be able to see
+                details of this encounter.
+              </Typography>
+            </RadioGroup>
+          </FormControl>
         </Grid>
         <Grid item>
           <Button variant="contained" large>
