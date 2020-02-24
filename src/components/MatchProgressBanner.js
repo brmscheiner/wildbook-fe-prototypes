@@ -8,6 +8,10 @@ import Alert from "@material-ui/lab/Alert";
 import AlertTitle from "@material-ui/lab/AlertTitle";
 import CloseIcon from "@material-ui/icons/Close";
 import TimelapseIcon from "@material-ui/icons/Timelapse";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles(theme => ({
   alert: {
@@ -16,7 +20,8 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     bottom: 0,
     right: 0,
-    zIndex: 1
+    zIndex: 1,
+    width: 440
   },
   message: {
     width: "100%"
@@ -30,27 +35,67 @@ export default function MatchProgressBanner() {
   const classes = useStyles();
 
   return (
-    <Alert
-      severity="info"
-      icon={<TimelapseIcon style={{ fontSize: 30, marginLeft: 8 }} />}
-      classes={{ root: classes.alert, message: classes.message }}
-      onClose={() => {
-        console.log("clicky");
+    <div
+      style={{
+        right: 0,
+        width: 440,
+        bottom: 0,
+        margin: 40,
+        zIndex: 1,
+        position: "fixed",
+        marginTop: 10,
+        backgroundColor: "rgb(232, 244, 253)",
+        borderRadius: 8
       }}
     >
-      <AlertTitle>Calculating Matches for Encounter 3XBC72</AlertTitle>
-      <Grid container alignItems="center" justify="flex-start">
-        <Grid item>
-          <Typography>Status: job in queue</Typography>
-        </Grid>
-        <Grid item className={classes.progress}>
-          <LinearProgress
-            variant="determinate"
-            value={52}
-            style={{ width: 200 }}
-          />
-        </Grid>
-      </Grid>
-    </Alert>
+      <ExpansionPanel style={{ backgroundColor: "unset", boxShadow: "unset" }}>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="encounter-progress-panel"
+          id="encounter-progress-header"
+        >
+          <AlertTitle style={{ marginTop: 4 }}>Jobs in Progress (4)</AlertTitle>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Grid container>
+            <Grid container>
+              <Typography variant="subtitle2">Encounter 2412</Typography>
+              <Grid container justify="space-between">
+                <Grid item>
+                  <Typography variant="caption">Calculating matches</Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="caption">#3 in queue</Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid container style={{ marginTop: 12 }}>
+              <Typography variant="subtitle2">Encounter 2414</Typography>
+              <Grid container justify="space-between">
+                <Grid item>
+                  <Typography variant="caption">Waiting for review</Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="caption">Review requested</Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid container style={{ marginTop: 12 }}>
+              <Typography variant="subtitle2">Encounter 2415</Typography>
+              <Grid container justify="space-between">
+                <Grid item>
+                  <Typography variant="caption">
+                    Discovering individuals
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="caption">In progress</Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+    </div>
   );
 }

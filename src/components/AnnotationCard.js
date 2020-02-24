@@ -33,7 +33,7 @@ export default function AnnotationCard({ name, imageSource }) {
     <Card style={{ marginBottom: 40}}>
           <CardHeader
             title={name}
-            subheader="5 annotations"
+            subheader="2 annotations"
             action={
               <div>
                 <IconButton
