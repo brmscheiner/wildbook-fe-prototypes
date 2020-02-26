@@ -54,7 +54,7 @@ export default function MatchProgressBanner() {
           aria-controls="encounter-progress-panel"
           id="encounter-progress-header"
         >
-          <AlertTitle style={{ marginTop: 4 }}>Jobs in Progress (4)</AlertTitle>
+          <AlertTitle style={{ marginTop: 4 }}>Jobs in Progress (3)</AlertTitle>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Grid container>

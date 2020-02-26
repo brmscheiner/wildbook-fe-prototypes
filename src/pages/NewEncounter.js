@@ -18,54 +18,28 @@ import {
   Radio,
   RadioGroup,
   FormControlLabel,
+  FormHelperText,
   FormLabel
 } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import PermMediaIcon from "@material-ui/icons/PermMediaOutlined";
 import MatchProgressBanner from "../components/MatchProgressBanner";
+import Column from "../components/Column";
+import Header from "../components/Header";
 
 const inputWidth = 340;
 
 export default function NewEncounter() {
   return (
-    <div
-      style={{
-        marginTop: 64,
-        marginBottom: 200,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center"
-      }}
-    >
+    <Column>
       <MatchProgressBanner />
-      <Typography component="h4" variant="h4" style={{ padding: 24 }}>
-        Report an Encounter
-      </Typography>
-
+      <Header>Report an Encounter</Header>
       <Grid
         direction="column"
         container
         spacing={4}
-        style={{ marginLeft: 40, marginRight: 40, maxWidth: 640 }}
+        style={{ marginLeft: 40, marginRight: 40, maxWidth: 480 }}
       >
-        <Grid item>
-          <Grid container direction="column" style={{ width: inputWidth }}>
-            <PermMediaIcon style={{ fontSize: 40, width: 180 }} />
-            <Button
-              variant="outlined"
-              style={{
-                marginTop: 12,
-                marginBottom: 12,
-                width: 180
-              }}
-              startIcon={<CloudUploadIcon />}
-            >
-              Upload Media
-            </Button>
-            Note: only JPG, JPEG and PNG files will be parsed by the matching
-            engine.
-          </Grid>
-        </Grid>
         <Grid item>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker
@@ -86,6 +60,40 @@ export default function NewEncounter() {
               }}
             />
           </MuiPickersUtilsProvider>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column" style={{ width: inputWidth }}>
+            <Button
+              variant="outlined"
+              style={{
+                width: 180
+              }}
+              startIcon={<CloudUploadIcon />}
+            >
+              Upload Media
+            </Button>
+            <FormHelperText>
+              Any media can be associated with your encounter. However, only
+              JPG, JPEG and PNG files will be parsed by the matching engine.
+            </FormHelperText>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <FormControl required>
+            <InputLabel>Encounter Context</InputLabel>
+            <Select
+              style={{ width: inputWidth }}
+              labelId="species-selector-label"
+              id="species-selector"
+              onChange={() => {
+                console.log("clicky ");
+              }}
+            >
+              <MenuItem value="1">Wildlife Tour</MenuItem>
+              <MenuItem value="2">Opportunistic Sighting</MenuItem>
+              <MenuItem value="3">Research Effort</MenuItem>
+            </Select>
+          </FormControl>
         </Grid>
         <Grid item>
           <FormControl required>
@@ -118,7 +126,7 @@ export default function NewEncounter() {
           <Typography variant="h5">Location</Typography>
           <LocationPicker
             containerElement={<div style={{ height: "100%" }} />}
-            mapElement={<div style={{ height: 400, width: 600 }} />}
+            mapElement={<div style={{ height: 400, width: 480 }} />}
             defaultPosition={{
               lat: 27.9878,
               lng: 86.925
@@ -127,9 +135,9 @@ export default function NewEncounter() {
               console.log(e);
             }}
           />
-          <Typography variant="subtitle">
+          <FormHelperText>
             Adjust the location by dragging the red pin
-          </Typography>
+          </FormHelperText>
         </Grid>
 
         <Grid item>
@@ -234,13 +242,16 @@ export default function NewEncounter() {
           />
         </Grid>
         <Grid item>
-          <Typography variant="h5" style={{ marginBottom: 20 }}>Permissions</Typography>
+          <Typography variant="h5" style={{ marginBottom: 20 }}>
+            Permissions
+          </Typography>
           <FormControl component="fieldset">
             <RadioGroup aria-label="sharing" name="sharing" value={1}>
               <FormControlLabel value={1} control={<Radio />} label="Public" />
               <Typography variant="caption">
-                Make the full details of this encounter public. The best way to
-                grow our community.
+                Make the full details of this encounter public. Growing a free
+                and public database of knowledge is the best way to advance
+                conservation efforts.
               </Typography>
               <FormControlLabel value={2} control={<Radio />} label="Limited" />
               <Typography variant="caption">
@@ -259,11 +270,38 @@ export default function NewEncounter() {
           </FormControl>
         </Grid>
         <Grid item>
+          <Typography variant="h5" style={{ marginBottom: 20 }}>
+            License
+          </Typography>
+          <FormControl component="fieldset">
+            <RadioGroup aria-label="sharing" name="sharing" value={1}>
+              <FormControlLabel
+                value={1}
+                control={<Radio />}
+                label="Creative Commons 3.0"
+              />
+              <Typography variant="caption">
+                Others will have the right to share and use this encounter data.
+                An attribution is required when using this data.
+              </Typography>
+              <FormControlLabel
+                value={2}
+                control={<Radio />}
+                label="Restricted License"
+              />
+              <Typography variant="caption">
+                Others do not have the right to share or use this encounter
+                data.
+              </Typography>
+            </RadioGroup>
+          </FormControl>
+        </Grid>
+        <Grid item style={{ marginBottom: 80, marginTop: 20 }}>
           <Button variant="contained" large>
             Report Encounter
           </Button>
         </Grid>
       </Grid>
-    </div>
+    </Column>
   );
 }

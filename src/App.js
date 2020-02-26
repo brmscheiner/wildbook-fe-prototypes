@@ -12,6 +12,7 @@ import Dashboard from "./components/Dashboard";
 import NewEncounter from "./pages/NewEncounter";
 import MatchResolution from "./pages/MatchResolution";
 import DiscoveryReview from "./pages/DiscoveryReview";
+import NewSite from "./pages/NewSite";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -71,6 +72,9 @@ export default function App() {
           </Route>
           <Route path="/discovery-review">
             <DiscoveryReview />
+          </Route>
+          <Route path="/new-site">
+            <NewSite />
           </Route>
           <Route>
             <Dashboard />
