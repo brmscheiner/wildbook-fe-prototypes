@@ -40,8 +40,8 @@ export default function AnnotationEditor({ imageSource }) {
     <>
       <Divider />
       <div>
-        <svg width={400} height={400}>
-          <image href={imageSource} x={0} y={0} width={400} height={400} />
+        <svg width={400} height={300}>
+          <image href={imageSource} x={0} y={0} width={400} height={300} />
           {bboxes.map((bbox, i) => (
             <rect
               x={bbox.x1}

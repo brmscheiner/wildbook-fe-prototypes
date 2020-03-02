@@ -20,14 +20,6 @@ const images = [
     imageSource: turt2
   },
   {
-    name: "turt3.jpg",
-    imageSource: turt3
-  },
-  {
-    name: "turt4.jpg",
-    imageSource: turt4
-  },
-  {
     name: "turt5.jpg",
     imageSource: turt5
   }
@@ -48,16 +40,14 @@ export default function DiscoveryReview() {
   const id = open ? "annotation-actions-menu" : undefined;
 
   return (
-    <Column>
-      <Grid container direction="column">
-        <div style={{ marginLeft: 8 }}>
-          <Typography variant="h4" style={{ margin: "24px 0 12px 0" }}>
-            Discovery Review
-          </Typography>
-          <Typography variant="subtitle2" style={{ marginBottom: 40 }}>
-            Reviewing Encounter 532930
-          </Typography>
-        </div>
+    <Column style={{ paddingLeft: 20, paddingRight: 20 }}>
+      <Grid container direction="column" alignItems="center">
+        <Typography variant="h4" style={{ margin: "24px 0 12px 0" }}>
+          Discovery Review
+        </Typography>
+        <Typography variant="subtitle1" style={{ marginBottom: 40 }}>
+          Reviewing Encounter c13Ylo2
+        </Typography>
         {images.map(img => (
           <AnnotationCard
             key={img.name}
@@ -65,8 +55,9 @@ export default function DiscoveryReview() {
             imageSource={img.imageSource}
           />
         ))}
-        <Button variant="contained" style={{ marginTop: 40 }}>Submit for Identification</Button>
-        <Button size="small" style={{ marginTop: 12, marginBottom: 200}}>Submit and Skip Identification</Button>
+        <Button variant="contained" style={{ marginTop: 40, width: 300 }}>
+          Next step: Identification
+        </Button>
       </Grid>
     </Column>
   );
