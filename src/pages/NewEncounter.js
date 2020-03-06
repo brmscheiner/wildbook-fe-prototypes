@@ -200,10 +200,10 @@ export default function NewEncounter() {
         </Grid>
 
         <Grid item>
-          <Typography variant="h5">Team</Typography>
+          <Typography variant="h5">Affiliations</Typography>
 
           <FormControl>
-            <InputLabel>Group</InputLabel>
+            <InputLabel>Organization</InputLabel>
             <Select
               style={{ width: inputWidth }}
               labelId="region-selector-label"
@@ -292,6 +292,69 @@ export default function NewEncounter() {
               <Typography variant="caption">
                 Others do not have the right to share or use this encounter
                 data.
+              </Typography>
+            </RadioGroup>
+          </FormControl>
+        </Grid>
+        <Grid item>
+          <Typography variant="h5" style={{ marginBottom: 20 }}>
+            Match Domain
+          </Typography>
+          <FormControl component="fieldset">
+            <RadioGroup aria-label="sharing" name="sharing" value={2}>
+              <FormControlLabel
+                value={1}
+                control={<Radio />}
+                label="All public encounters"
+              />
+              <Typography variant="caption">
+                Attempt to match this encounter against all public encounters
+              </Typography>
+              <FormControlLabel
+                value={2}
+                control={<Radio />}
+                label="A subset of encounters"
+              />
+              <Typography variant="caption">
+                Attempt to match this encounter against a selected subset of
+                encounters.
+              </Typography>
+              <FormControl>
+                <InputLabel>Subset</InputLabel>
+                <Select
+                  style={{ width: inputWidth }}
+                  labelId="region-selector-label"
+                  id="region-selector"
+                  onChange={() => {
+                    console.log("clicky ");
+                  }}
+                >
+                  <MenuItem value="1">
+                    2018 Male Reticulated Giraffe at Lewa
+                  </MenuItem>
+                  <MenuItem value="2">
+                    2018 Female Reticulated Giraffe at Lewa
+                  </MenuItem>
+                  <MenuItem value="3">
+                    2019 Male Reticulated Giraffe at Lewa
+                  </MenuItem>
+                </Select>
+              </FormControl>
+              <Button
+                variant="outlined"
+                style={{ width: 140, margin: "10px 0 20px 0" }}
+              >
+                New subset
+              </Button>
+              <FormControlLabel
+                value={3}
+                control={<Radio />}
+                label="No encounters"
+              />
+              <Typography variant="caption">
+                Skip identification for this encounter. If this encounter is set
+                to public, the encounter data will still enter the computer
+                vision database for other users to match against.
               </Typography>
             </RadioGroup>
           </FormControl>

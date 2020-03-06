@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import {
   createMuiTheme,
   makeStyles,
@@ -58,7 +58,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter basename="/">
         <AppHeader />
         <Switch>
           <Route path="/encounters/new">
@@ -80,7 +80,7 @@ export default function App() {
             <Dashboard />
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </ThemeProvider>
   );
 }
