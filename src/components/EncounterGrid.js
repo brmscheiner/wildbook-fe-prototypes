@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { makeStyles, withStyles, lighten } from "@material-ui/core/styles";
 import { deepPurple, green, blue } from "@material-ui/core/colors";
+import { Link as RouterLink, useHistory } from "react-router-dom";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -12,7 +13,6 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Link from "@material-ui/core/Link";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import shark1 from "../assets/shark1.png";
 import shark2 from "../assets/shark2.jpeg";
@@ -89,6 +89,7 @@ const encounters = [
 
 export default function EncounterGrid() {
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <Box padding={2} style={{ width: 1000 }}>
@@ -96,10 +97,15 @@ export default function EncounterGrid() {
         <Typography component="h4" variant="h4" style={{ margin: 12 }}>
           Your Encounters
         </Typography>
-        <Button small>
-          <AddCircleIcon />
-          <Typography style={{ marginLeft: 8 }}>Report Encounter</Typography>
-        </Button>
+        <RouterLink
+          to="/encounters/new"
+          style={{ textDecoration: "none", display: "flex" }}
+        >
+          <Button small>
+            <AddCircleIcon />
+            <Typography style={{ marginLeft: 8 }}>Report Encounter</Typography>
+          </Button>
+        </RouterLink>
       </Grid>
       {/* <Box component="span">
         <Typography component="span">
@@ -150,11 +156,50 @@ export default function EncounterGrid() {
                 </Typography>
               </CardContent>
             </CardActionArea>
-            {/* <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-              </CardActions> */}
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card
+            className={classes.root}
+            onClick={() => {
+              console.log("hey");
+              history.push("/match-resolution");
+            }}
+          >
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image={shark2}
+                title="Contemplative Reptile"
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  color: "white",
+                  backgroundColor: "rgba(255, 60, 60, 0.88)",
+                  width: "100%",
+                  height: 40
+                }}
+              >
+                <Typography
+                  style={{
+                    textAlign: "center",
+                    marginTop: 10
+                  }}
+                >
+                  Ready for Identification Review
+                </Typography>
+              </div>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  2/13/2020
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  14 photographs
+                </Typography>
+              </CardContent>
+            </CardActionArea>
           </Card>
         </Grid>
         {encounters.map(encounter => (

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Typography,
   TextField,
@@ -71,9 +72,18 @@ export default function NewEncounter() {
             <Grid item style={{ padding: 20, width: "calc(50% - 1px)" }}>
               <div style={{ display: "inline-grid" }}>
                 <img src={turt2} style={{ maxHeight: 600, maxWidth: "100%" }} />
-                <Typography variant="caption" style={{ textAlign: "end" }}>
-                  Annotation 3 of 3
-                </Typography>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Typography variant="caption">
+                    Annotation 3 of 3
+                  </Typography>
+                  <Typography variant="caption">
+                    <Link to="/discovery-review" style={{ color: "unset", marginLeft: 10 }}>
+                      Edit Annotations
+                    </Link>
+                  </Typography>
+                </div>
                 <Divider />
               </div>
               <Grid container spacing={3} style={{ marginTop: 4 }}>
