@@ -12,6 +12,7 @@ import Dashboard from "./components/Dashboard";
 import NewEncounter from "./pages/NewEncounter";
 import MatchResolution from "./pages/MatchResolution";
 import DiscoveryReview from "./pages/DiscoveryReview";
+import SubmitDataSplash from "./pages/SubmitDataSplash"
 import NewSite from "./pages/NewSite";
 
 const useStyles = makeStyles(theme => ({
@@ -64,8 +65,8 @@ export default function App() {
           <Route path="/encounters/new">
             <NewEncounter />
           </Route>
-          <Route path="/encounters/4232318">
-            <MatchResolution />
+          <Route path="/submit-data">
+            <SubmitDataSplash />
           </Route>
           <Route path="/match-resolution">
             <MatchResolution />
