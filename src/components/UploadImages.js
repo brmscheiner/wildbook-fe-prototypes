@@ -28,7 +28,7 @@ export default function NewEncounter({ setStep }) {
             >
               Upload Media
             </Button>
-            <FormHelperText>
+            <FormHelperText style={{ marginTop: 8 }}>
               JPG, JPEG and PNG pictures of your encounters. In step 3 you can
               upload other types of media to associate with your encounters.
             </FormHelperText>

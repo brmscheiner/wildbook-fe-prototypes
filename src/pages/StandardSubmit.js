@@ -9,16 +9,17 @@ import StepLabel from "@material-ui/core/StepLabel";
 import Filter9PlusIcon from "@material-ui/icons/Filter9Plus";
 import UploadImages from "../components/UploadImages";
 import ProcessingImages from "../components/ProcessingImages";
+import GroupImages from "../components/GroupImages";
 
 export default function StandardSubmit() {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(2);
 
   const activeStep = Math.max(0, step - 1);
 
   return (
     <div
       style={{
-        marginTop: 80,
+        margin: '80px auto',
         width: "100%",
         maxWidth: 800,
         display: "flex",
@@ -43,6 +44,7 @@ export default function StandardSubmit() {
       </Stepper>
       {step === 0 && <UploadImages setStep={setStep} />}
       {step === 1 && <ProcessingImages setStep={setStep} />}
+      {step === 2 && <GroupImages setStep={setStep} />}
     </div>
   );
 }

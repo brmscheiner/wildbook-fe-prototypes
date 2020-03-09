@@ -15,6 +15,8 @@ import DiscoveryReview from "./pages/DiscoveryReview";
 import SubmitDataSplash from "./pages/SubmitDataSplash"
 import NewSite from "./pages/NewSite";
 import StandardSubmit from "./pages/StandardSubmit";
+import FourOhFour from "./pages/FourOhFour";
+import FourOhFourTwo from "./pages/FourOhFourTwo";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -80,6 +82,12 @@ export default function App() {
           </Route>
           <Route path="/new-site">
             <NewSite />
+          </Route>
+          <Route path="/404">
+            <FourOhFour />
+          </Route>
+          <Route path="/4042">
+            <FourOhFourTwo />
           </Route>
           <Route>
             <Dashboard />
