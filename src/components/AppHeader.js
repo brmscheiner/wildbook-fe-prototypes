@@ -87,7 +87,14 @@ export default function AppHeader() {
               <ListItemIcon>
                 <AddToPhotosIcon />
               </ListItemIcon>
-              <ListItemText>Submit Data</ListItemText>
+              <ListItemText>
+                <Link
+                  to="/submit-data"
+                  style={{ textDecoration: "none", color: "unset" }}
+                >
+                  Submit Data
+                </Link>
+              </ListItemText>
             </ListItem>
             <Divider style={{ marginTop: 12, marginBottom: 12 }} />
             <ListItem>
@@ -120,7 +127,7 @@ export default function AppHeader() {
                 <HelpOutlineIcon />
               </ListItemIcon>
               <ListItemText>
-              <a
+                <a
                   href="https://community.wildbook.org/"
                   style={{ textDecoration: "none", color: "unset" }}
                 >

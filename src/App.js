@@ -14,6 +14,7 @@ import MatchResolution from "./pages/MatchResolution";
 import DiscoveryReview from "./pages/DiscoveryReview";
 import SubmitDataSplash from "./pages/SubmitDataSplash"
 import NewSite from "./pages/NewSite";
+import StandardSubmit from "./pages/StandardSubmit";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -67,6 +68,9 @@ export default function App() {
           </Route>
           <Route path="/submit-data">
             <SubmitDataSplash />
+          </Route>
+          <Route path="/standard-submit">
+            <StandardSubmit />
           </Route>
           <Route path="/match-resolution">
             <MatchResolution />
