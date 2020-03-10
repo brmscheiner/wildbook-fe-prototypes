@@ -18,24 +18,7 @@ export default function NewEncounter({ setStep }) {
     <div>
       <Grid direction="column" container spacing={6} style={{ maxWidth: 480 }}>
         <Grid item>
-          <Grid container direction="column" style={{ marginTop: 40 }}>
-            <Button
-              variant="outlined"
-              style={{
-                width: 180
-              }}
-              startIcon={<CloudUploadIcon />}
-            >
-              Upload Media
-            </Button>
-            <FormHelperText style={{ marginTop: 8 }}>
-              JPG, JPEG and PNG pictures of your encounters. In step 3 you can
-              upload other types of media to associate with your encounters.
-            </FormHelperText>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <FormControl required>
+          <FormControl required  style={{ marginTop: 40 }}>
             <InputLabel>Species</InputLabel>
             <Select
               style={{ width: inputWidth }}
@@ -53,6 +36,24 @@ export default function NewEncounter({ setStep }) {
             </Select>
           </FormControl>
         </Grid>
+        <Grid item>
+          <Grid container direction="column">
+            <Button
+              variant="outlined"
+              style={{
+                width: 260
+              }}
+              startIcon={<CloudUploadIcon />}
+            >
+              Upload Photographs
+            </Button>
+            <FormHelperText style={{ marginTop: 8 }}>
+              JPG, JPEG and PNG pictures of your encounters. In step 3 you can
+              upload other types of media.
+            </FormHelperText>
+          </Grid>
+        </Grid>
+
         <Grid
           item
           style={{ marginTop: 20, display: "flex", flexDirection: "column" }}

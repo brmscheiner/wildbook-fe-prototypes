@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Typography from "@material-ui/core/Typography";
 
-export default function ProcessingImages({ setStep }) {
+export default function ProcessingImages({ setStep, step }) {
   const [finished, setFinished] = useState(false);
   useEffect(() => {
     setTimeout(() => {
@@ -10,7 +10,7 @@ export default function ProcessingImages({ setStep }) {
     }, 5000);
 
     setTimeout(() => {
-        setStep(2);
+        if (step === 1) setStep(2);
       }, 6000);
   });
   return (

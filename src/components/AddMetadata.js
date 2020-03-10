@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import DateFnsUtils from "@date-io/date-fns";
 import {
   MuiPickersUtilsProvider,
@@ -57,7 +58,10 @@ const images = [
 
 const inputWidth = 340;
 
-export default function NewEncounter() {
+export default function AddMetadata() {
+  const [radioClicked, setRadioClicked] = useState(false);
+  const history = useHistory();
+
   return (
     <Grid
       direction="column"
@@ -70,7 +74,12 @@ export default function NewEncounter() {
           Date and Location
         </Typography>
         <FormControl component="fieldset">
-          <RadioGroup aria-label="sharing" name="sharing" value={1}>
+          <RadioGroup
+            aria-label="sharing"
+            name="sharing"
+            value={radioClicked ? 1 : null}
+            onClick={() => setRadioClicked(true)}
+          >
             <FormControlLabel
               value={1}
               control={<Radio />}
@@ -90,71 +99,75 @@ export default function NewEncounter() {
             </Typography>
           </RadioGroup>
         </FormControl>
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <KeyboardDatePicker
-            disableToolbar
-            variant="inline"
-            format="MM/dd/yyyy"
-            margin="normal"
-            id="date-picker-inline"
-            label="Encounter Date"
-            value="02/12/1999"
-            required
-            style={{ width: inputWidth }}
-            onChange={() => {
-              console.log("clicky ");
-            }}
-            KeyboardButtonProps={{
-              "aria-label": "change date"
-            }}
-          />
-        </MuiPickersUtilsProvider>
-        <FormControl>
-          <InputLabel>Country</InputLabel>
-          <Select
-            style={{ width: inputWidth }}
-            labelId="country-selector-label"
-            id="country-selector"
-            onChange={() => {
-              console.log("clicky ");
-            }}
-          >
-            <MenuItem value="male">Colombia</MenuItem>
-            <MenuItem value="male">India</MenuItem>
-            <MenuItem value="female">Mozambique</MenuItem>
-            <MenuItem value="unknown">Britain</MenuItem>
-          </Select>
-        </FormControl>
-        <FormControl style={{ marginBottom: 20 }}>
-          <InputLabel>Region</InputLabel>
-          <Select
-            style={{ width: inputWidth }}
-            labelId="region-selector-label"
-            id="region-selector"
-            onChange={() => {
-              console.log("clicky ");
-            }}
-          >
-            <MenuItem value="1">Medellín</MenuItem>
-            <MenuItem value="2">Goa</MenuItem>
-            <MenuItem value="3">Tombaqûœ</MenuItem>
-            <MenuItem value="4">Jočasta</MenuItem>
-          </Select>
-        </FormControl>
-        <LocationPicker
-          containerElement={<div style={{ height: "100%" }} />}
-          mapElement={<div style={{ height: 400, width: 480 }} />}
-          defaultPosition={{
-            lat: 27.9878,
-            lng: 86.925
-          }}
-          onChange={e => {
-            console.log(e);
-          }}
-        />
-        <FormHelperText>
-          Adjust the location by dragging the red pin
-        </FormHelperText>
+        {radioClicked && (
+          <>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <KeyboardDatePicker
+                disableToolbar
+                variant="inline"
+                format="MM/dd/yyyy"
+                margin="normal"
+                id="date-picker-inline"
+                label="Encounter Date"
+                value="02/12/1999"
+                required
+                style={{ width: inputWidth }}
+                onChange={() => {
+                  console.log("clicky ");
+                }}
+                KeyboardButtonProps={{
+                  "aria-label": "change date"
+                }}
+              />
+            </MuiPickersUtilsProvider>
+            <FormControl>
+              <InputLabel>Country</InputLabel>
+              <Select
+                style={{ width: inputWidth }}
+                labelId="country-selector-label"
+                id="country-selector"
+                onChange={() => {
+                  console.log("clicky ");
+                }}
+              >
+                <MenuItem value="male">Colombia</MenuItem>
+                <MenuItem value="male">India</MenuItem>
+                <MenuItem value="female">Mozambique</MenuItem>
+                <MenuItem value="unknown">Britain</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl style={{ marginBottom: 20 }}>
+              <InputLabel>Region</InputLabel>
+              <Select
+                style={{ width: inputWidth }}
+                labelId="region-selector-label"
+                id="region-selector"
+                onChange={() => {
+                  console.log("clicky ");
+                }}
+              >
+                <MenuItem value="1">Medellín</MenuItem>
+                <MenuItem value="2">Goa</MenuItem>
+                <MenuItem value="3">Tombaqûœ</MenuItem>
+                <MenuItem value="4">Jočasta</MenuItem>
+              </Select>
+            </FormControl>
+            <LocationPicker
+              containerElement={<div style={{ height: "100%" }} />}
+              mapElement={<div style={{ height: 400, width: 480 }} />}
+              defaultPosition={{
+                lat: 27.9878,
+                lng: 86.925
+              }}
+              onChange={e => {
+                console.log(e);
+              }}
+            />
+            <FormHelperText>
+              Adjust the location by dragging the red pin
+            </FormHelperText>
+          </>
+        )}
       </Grid>
       <Grid item>
         <Typography variant="h5" style={{ margin: "16px 0" }}>
@@ -178,7 +191,7 @@ export default function NewEncounter() {
         </Grid>
         <ExpansionPanel>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            Add metadata
+            Metadata
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <IndividualForm />
@@ -208,7 +221,7 @@ export default function NewEncounter() {
         </Grid>
         <ExpansionPanel>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            Add metadata
+            Metadata
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <IndividualForm />
@@ -357,9 +370,20 @@ export default function NewEncounter() {
         </ExpansionPanel>
       </Grid>
       <Grid item style={{ marginBottom: 80, marginTop: 20 }}>
-        <Button variant="contained" large>
-          Report Encounter
-        </Button>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column"
+          }}
+          onClick={() => history.push("/")}
+        >
+          <Button variant="contained" large>
+            Submit for Identification
+          </Button>
+          <Button>Submit and skip identification</Button>
+        </div>
       </Grid>
     </Grid>
   );

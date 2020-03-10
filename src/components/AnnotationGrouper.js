@@ -19,20 +19,20 @@ import {
 
 const initialCoords = [
   {
-    x1: 60,
-    y1: 112,
-    x2: 190,
-    y2: 200
+    x1: 20,
+    y1: 32,
+    x2: 166,
+    y2: 114
   }
 ];
 
-export default function AnnotationGrouper({ imageSource }) {
+export default function AnnotationGrouper({ imageSource, cover }) {
   const [activeAnnotation, setActiveAnnotation] = useState(0);
   const [bboxes, setBboxes] = useState(initialCoords);
 
 
   return (
-    <div style={{ backgroundImage: `url(${imageSource})`, backgroundSize: 'cover'}}>
+    <div style={{ backgroundImage: `url(${imageSource})`, backgroundSize: cover ? 'cover' : 'contain', backgroundRepeat: 'no-repeat'}}>
         <svg width={340} height={220}>
           {bboxes.map((bbox, i) => (
             <rect

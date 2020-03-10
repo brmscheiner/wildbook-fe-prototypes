@@ -24,7 +24,7 @@ const colors = [
 
 const unknownColor = "#999999";
 
-export default function AnnotationCard({ name, imageSource, individuals }) {
+export default function AnnotationCard({ name, imageSource, individuals, cover }) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = event => {
@@ -75,20 +75,17 @@ export default function AnnotationCard({ name, imageSource, individuals }) {
             >
               <List dense>
                 <ListItem>
-                  <Button size="small">Add annotation</Button>
+                  <Button size="small">Edit annotation</Button>
                 </ListItem>
                 <ListItem>
                   <Button size="small">Delete this annotation</Button>
-                </ListItem>
-                <ListItem>
-                  <Button size="small">Revert all changes</Button>
                 </ListItem>
               </List>
             </Popover>
           </div>
         }
       />
-      <AnnotationGrouper imageSource={imageSource} />
+      <AnnotationGrouper cover={cover} imageSource={imageSource} />
       <Grid container direction="row" spacing={1} style={{ padding: 12 }}>
         {[...Array(individuals).keys()].map(i => (
           <Grid item>

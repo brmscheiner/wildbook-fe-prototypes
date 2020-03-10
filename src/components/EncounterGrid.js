@@ -98,7 +98,7 @@ export default function EncounterGrid() {
           Your Encounters
         </Typography>
         <RouterLink
-          to="/encounters/new"
+          to="/submit-data"
           style={{ textDecoration: "none", display: "flex" }}
         >
           <Button small>

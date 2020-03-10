@@ -44,21 +44,22 @@ const images = [
 export default function GroupImages({ setStep }) {
   const [individuals, setIndividuals] = useState(1);
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "left" }}
+    >
       <Grid
         container
         item
         direction="column"
-        style={{ maxWidth: 300, margin: 60 }}
+        style={{ maxWidth: 300, marginLeft: 60, marginTop: 40 }}
         spacing={1}
       >
         <Grid item>
-          <Typography variant="subtitle2">Labels</Typography>
+          <Typography variant="subtitle2">1. Create Labels</Typography>
         </Grid>
         <Grid item>
           <Typography variant="caption">
-            Create one label for each individual in your photographs. Then,
-            match each annotation with a label to group them by individual.
+            Create one label for each individual in your photographs.
           </Typography>
         </Grid>
         <Grid
@@ -70,7 +71,7 @@ export default function GroupImages({ setStep }) {
         >
           {[...Array(individuals).keys()].map(i => (
             <Grid item>
-              <Avatar style={{ backgroundColor: colors[i], cursor: 'pointer' }}>
+              <Avatar style={{ backgroundColor: colors[i], cursor: "pointer" }}>
                 {String.fromCharCode(65 + i)}
               </Avatar>
             </Grid>
@@ -89,10 +90,36 @@ export default function GroupImages({ setStep }) {
           </Button>
         </Grid>
       </Grid>
+      <Grid
+        container
+        item
+        direction="column"
+        style={{
+          maxWidth: 300,
+          marginLeft: 60,
+          marginTop: 40,
+          marginBottom: 20
+        }}
+        spacing={1}
+      >
+        <Grid item>
+          <Typography variant="subtitle2">
+            2. Assign Labels to Photographs
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="caption">
+            Match a label to each of the annotations created by our machine
+            learning algorithm.
+          </Typography>
+        </Grid>
+      </Grid>
+
       <Grid container spacing={2} justify="center">
         {images.map(img => (
           <Grid item>
             <AnnotationReview
+              cover
               individuals={individuals}
               key={img.name}
               name={img.name}
@@ -101,10 +128,24 @@ export default function GroupImages({ setStep }) {
           </Grid>
         ))}
       </Grid>
-
-      <Button variant="contained" style={{ marginTop: 40, width: 300, textAlign: 'center' }} onClick={() => setStep(3)}>
+      <Grid item>
+        <Button
+          startIcon={<AddCircleOutlineIcon />}
+          variant="outlined"
+          style={{ width: 200, marginLeft: 52 }}
+        >
+          Add Annotation
+        </Button>
+      </Grid>
+      <div style={{ width: "100%", textAlign: 'center' }}>
+        <Button
+          variant="contained"
+          style={{ marginTop: 40, width: 300, textAlign: "center" }}
+          onClick={() => setStep(3)}
+        >
           Finish Grouping
         </Button>
+      </div>
     </div>
   );
 }

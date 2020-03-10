@@ -12,7 +12,7 @@ import GroupImages from "../components/GroupImages";
 import AddMetadata from "../components/AddMetadata";
 
 export default function StandardSubmit() {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(0);
 
   const activeStep = Math.max(0, step - 1);
 
@@ -43,7 +43,7 @@ export default function StandardSubmit() {
         </Step>
       </Stepper>
       {step === 0 && <UploadImages setStep={setStep} />}
-      {step === 1 && <ProcessingImages setStep={setStep} />}
+      {step === 1 && <ProcessingImages step={step} setStep={setStep} />}
       {step === 2 && <GroupImages setStep={setStep} />}
       {step === 3 && <AddMetadata setStep={setStep} />}
     </div>
