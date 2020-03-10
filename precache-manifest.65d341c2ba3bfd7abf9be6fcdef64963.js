@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "88e9a2b5faa0335adc45a40cb42a5db2",
+    "revision": "6b08b26c4dacacec10efb747cd9b68fd",
     "url": "/wildbook-fe-prototypes/index.html"
   },
   {
-    "revision": "5bb3b259d4938d2708e3",
-    "url": "/wildbook-fe-prototypes/static/js/2.59353f04.chunk.js"
+    "revision": "2b6bdf09dadd1029031c",
+    "url": "/wildbook-fe-prototypes/static/js/2.c117b646.chunk.js"
   },
   {
     "revision": "6f5f1c4a5f7f6e382b8aeca1b4ac8d96",
-    "url": "/wildbook-fe-prototypes/static/js/2.59353f04.chunk.js.LICENSE.txt"
+    "url": "/wildbook-fe-prototypes/static/js/2.c117b646.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e81aeb98d6754e132659",
-    "url": "/wildbook-fe-prototypes/static/js/main.ac1d68d6.chunk.js"
+    "revision": "c1b1041b982f781cdea0",
+    "url": "/wildbook-fe-prototypes/static/js/main.bdca8a2e.chunk.js"
   },
   {
     "revision": "86d7c2b67b510718f51a",
@@ -28,8 +28,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wildbook-fe-prototypes/static/media/jon2.b658bdc6.jpeg"
   },
   {
+    "revision": "af8033328b9c0edb3151c2ae2f793a3c",
+    "url": "/wildbook-fe-prototypes/static/media/ocean.af803332.jpeg"
+  },
+  {
     "revision": "a36bc90c1405b0d1e625446d3e1e5a3f",
     "url": "/wildbook-fe-prototypes/static/media/sahara-conservation.a36bc90c.png"
+  },
+  {
+    "revision": "921fa8a77fa8fc79e10ccda28033c7ab",
+    "url": "/wildbook-fe-prototypes/static/media/savanna.921fa8a7.jpeg"
   },
   {
     "revision": "e370ca584471c8d9165ad4d05e2b201e",
