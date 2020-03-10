@@ -30,6 +30,7 @@ export default function AnnotationGrouper({ imageSource }) {
   const [activeAnnotation, setActiveAnnotation] = useState(0);
   const [bboxes, setBboxes] = useState(initialCoords);
 
+
   return (
     <div style={{ backgroundImage: `url(${imageSource})`, backgroundSize: 'cover'}}>
         <svg width={340} height={220}>

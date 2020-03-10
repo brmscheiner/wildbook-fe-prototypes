@@ -4,7 +4,6 @@ import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import Popover from "@material-ui/core/Popover";
 import IconButton from "@material-ui/core/IconButton";
-import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import List from "@material-ui/core/List";
@@ -24,7 +23,7 @@ const colors = [
 
 const unknownColor = "#999999";
 
-export default function AnnotationCard({ name, imageSource, individuals }) {
+export default function AnnotationThumbnail({ name, imageSource, selectedIndividual }) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = event => {
@@ -38,13 +37,13 @@ export default function AnnotationCard({ name, imageSource, individuals }) {
   const open = Boolean(anchorEl);
   const id = open ? "annotation-actions-menu" : undefined;
 
-  const [selectedIndividual, setSelectedIndividual] = useState(null);
-
   return (
     <Card
       style={{
         marginBottom: 40,
         backgroundColor: colors[selectedIndividual] || "unset",
+        width: 240,
+        height: 240,
       }}
       elevation={5}
     >
@@ -89,30 +88,6 @@ export default function AnnotationCard({ name, imageSource, individuals }) {
         }
       />
       <AnnotationGrouper imageSource={imageSource} />
-      <Grid container direction="row" spacing={1} style={{ padding: 12 }}>
-        {[...Array(individuals).keys()].map(i => (
-          <Grid item>
-            <Avatar
-              onClick={() => setSelectedIndividual(i)}
-              style={{
-                backgroundColor: colors[i],
-                cursor: "pointer",
-                border: selectedIndividual === i ? "3px solid white" : "unset"
-              }}
-            >
-              {String.fromCharCode(65 + i)}
-            </Avatar>
-          </Grid>
-        ))}
-        <Grid item>
-          <Avatar
-            onClick={() => setSelectedIndividual(null)}
-            style={{ backgroundColor: unknownColor, cursor: "pointer" }}
-          >
-            ?
-          </Avatar>
-        </Grid>
-      </Grid>
     </Card>
   );
 }
