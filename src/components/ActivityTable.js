@@ -84,20 +84,20 @@ export default function ActivityTable() {
                   <Grid container spacing={1} style={{ flexWrap: "nowrap" }}>
                     <Grid item>
                       <Button
-                        className={classes.green}
                         variant="outlined"
                         size="small"
+                        startIcon={<CheckIcon />}
                       >
-                        <CheckIcon />
+                        Approve
                       </Button>
                     </Grid>
                     <Grid item>
                       <Button
-                        className={classes.red}
                         variant="outlined"
                         size="small"
+                        startIcon={<CloseIcon />}
                       >
-                        <CloseIcon />
+                        Ignore
                       </Button>
                     </Grid>
                   </Grid>

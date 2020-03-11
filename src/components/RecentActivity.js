@@ -9,7 +9,8 @@ import Paper from "@material-ui/core/Paper";
 import ListItemText from "@material-ui/core/ListItemText";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
 import ActivityTable from "./ActivityTable";
 
 const drawerWidth = 20;
@@ -36,44 +37,14 @@ export default function RecentActivity() {
 
   return (
     <Paper elevation={5} className={classes.container}>
-      <Grid container className={classes.grid}>
-        <Grid item className={classes.list}>
-          <List
-            component="nav"
-            aria-label="recent activity folders"
-            subheader={
-              <ListSubheader component="div" id="nested-list-subheader">
-                Recent Activity
-              </ListSubheader>
-            }
-          >
-            <ListItem>
-              <ListItemText primary="All (12)" />
-            </ListItem>
-            <Divider />
-            <ListItem>
-              <ListItemText primary="Encounters (6)" />
-            </ListItem>
-            <Divider />
-            <ListItem>
-              <ListItemText primary="Reviews (1)" />
-            </ListItem>
-            <Divider />
-            <ListItem style={{ backgroundColor: "#dddddd" }}>
-              <ListItemText primary="Requests (3)" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Merges & Splits (2)" />
-            </ListItem>
-          </List>
-        </Grid>
-        <Grid item>
-          <Divider orientation="vertical" />
-        </Grid>
-        <Grid item>
-          <ActivityTable />
-        </Grid>
-      </Grid>
+      <Tabs>
+        <Tab label="All (12)" />
+        <Tab label="Notifications (7)" />
+        <Tab label="Requests (5)" />
+        <Tab label="Reviews" />
+      </Tabs>
+      <Divider />
+      <ActivityTable />
     </Paper>
   );
 }
