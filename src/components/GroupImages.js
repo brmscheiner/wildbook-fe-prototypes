@@ -3,9 +3,10 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
+import Badge from "@material-ui/core/Badge";
 import AnnotationReview from "../components/AnnotationReview";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import DeleteIcon from "@material-ui/icons/Cancel";
 import turt1 from "../assets/turt1.jpg";
 import turt2 from "../assets/turt2.jpg";
 import turt3 from "../assets/turt3.jpg";
@@ -71,9 +72,13 @@ export default function GroupImages({ setStep }) {
         >
           {[...Array(individuals).keys()].map(i => (
             <Grid item>
-              <Avatar style={{ backgroundColor: colors[i], cursor: "pointer" }}>
-                {String.fromCharCode(65 + i)}
-              </Avatar>
+              <Badge onClick={() => setIndividuals(individuals - 1)} badgeContent={<DeleteIcon style={{ fill: '#757575', cursor: 'pointer' }} fontSize="small" />}>
+                <Avatar
+                  style={{ backgroundColor: colors[i] }}
+                >
+                  {String.fromCharCode(65 + i)}
+                </Avatar>
+              </Badge>
             </Grid>
           ))}
         </Grid>
@@ -137,7 +142,7 @@ export default function GroupImages({ setStep }) {
           Add Annotation
         </Button>
       </Grid>
-      <div style={{ width: "100%", textAlign: 'center' }}>
+      <div style={{ width: "100%", textAlign: "center" }}>
         <Button
           variant="contained"
           style={{ marginTop: 40, width: 300, textAlign: "center" }}
